@@ -159,20 +159,21 @@ class SteamUserToken implements TokenInterface
      */
     public function serialize()
     {
-        return serialize([
-            'attributes' => $this->attributes,
-            'authenticated' => $this->authenticated,
-            'user' => $this->user,
-            'username' => $this->username,
-        ]);
+        return serialize($this->__serialize());
+
     }
 
     /**
      * {@inheritDoc}
      */
-    public function __serialize()
+    public function __serialize(): array
     {
-        return $this->serialize();
+        return [
+            'attributes' => $this->attributes,
+            'authenticated' => $this->authenticated,
+            'user' => $this->user,
+            'username' => $this->username,
+        ];
     }
 
     /**
