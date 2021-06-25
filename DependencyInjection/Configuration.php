@@ -16,16 +16,16 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('knojector_steam_authentication');
+        $treeBuilder = new TreeBuilder('knojector_steam_authentication');
+        $rootNode = $treeBuilder->getRootNode();
 
         $rootNode
             ->children()
-                ->scalarNode('api_key')->end()
-                ->scalarNode('login_route')->end()
-                ->scalarNode('login_redirect')->end()
-                ->scalarNode('user_class')->end()
-                ->scalarNode('request_validator_class')->defaultValue(RequestValidator::class)->end()
+            ->scalarNode('api_key')->end()
+            ->scalarNode('login_route')->end()
+            ->scalarNode('login_redirect')->end()
+            ->scalarNode('user_class')->end()
+            ->scalarNode('request_validator_class')->defaultValue(RequestValidator::class)->end()
             ->end()
         ;
 
