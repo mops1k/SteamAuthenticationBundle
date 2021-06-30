@@ -32,12 +32,12 @@ interface SteamUserInterface
     /**
      * @return int
      */
-    public function getProfileState(): int;
+    public function getProfileState(): ?int;
 
     /**
-     * @param int $state
+     * @param null|int $state
      */
-    public function setProfileState(int $state);
+    public function setProfileState(?int $state);
 
     /**
      * @return string

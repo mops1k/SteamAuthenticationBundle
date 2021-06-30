@@ -39,7 +39,7 @@ class UserFactory
 
         $user->setSteamId($userData['steamid']);
         $user->setCommunityVisibilityState($userData['communityvisibilitystate']);
-        $user->setProfileState($userData['profilestate']);
+        $user->setProfileState($userData['profilestate'] ?? null);
         $user->setProfileName($userData['personaname']);
         $user->setLastLogOff($userData['lastlogoff']);
         $user->setCommentPermission(

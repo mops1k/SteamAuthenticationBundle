@@ -26,9 +26,9 @@ abstract class AbstractSteamUser implements SteamUserInterface, UserInterface
     protected $communityVisibilityState;
 
     /**
-     * @var int
+     * @var int|null
      *
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="integer", nullable=true)
      */
     protected $profileState;
 
@@ -137,7 +137,7 @@ abstract class AbstractSteamUser implements SteamUserInterface, UserInterface
     /**
      * {@inheritdoc}
      */
-    public function getProfileState(): int
+    public function getProfileState(): ?int
     {
         return $this->profileState;
     }
@@ -145,7 +145,7 @@ abstract class AbstractSteamUser implements SteamUserInterface, UserInterface
     /**
      * {@inheritdoc}
      */
-    public function setProfileState(int $state)
+    public function setProfileState(?int $state)
     {
         $this->profileState = $state;
     }
